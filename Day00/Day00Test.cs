@@ -9,6 +9,9 @@ namespace AoC2020
         readonly string input =
 @"";
 
+        readonly Int64 resultA = 0;
+        readonly Int64 resultB = 0;
+
         [Fact]
         public void Day00a()
         {
@@ -16,7 +19,7 @@ namespace AoC2020
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
 
             var result = Day00.Day00a(lines);
-            Assert.Equal(0, result);
+            Assert.Equal(resultA, result);
 
             Console.WriteLine("Day00a : {0}   Time: {1}", result, sw.ElapsedMilliseconds);
         }
@@ -29,7 +32,7 @@ namespace AoC2020
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
 
             var result = Day00.Day00b(lines);
-            Assert.Equal(0, result);
+            Assert.Equal(resultB, result);
 
             Console.WriteLine("Day00b : {0}   Time: {1}", result, sw.ElapsedMilliseconds);
         }
