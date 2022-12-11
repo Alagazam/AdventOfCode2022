@@ -87,9 +87,14 @@ Monkey 3:
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
             var monkeys = AoC2020.Day11.GetMonkeys(lines);
             Assert.Equal(4, monkeys.Count);
+            var commonDivisor = 1L;
+            foreach (var m in monkeys)
+            {
+                commonDivisor *= m.divider;
+            }
             foreach (var n in Enumerable.Range(0, 20))
             {
-                AoC2020.Day11.Round(monkeys, false);
+                AoC2020.Day11.Round(monkeys, false, commonDivisor);
             }
 
             Assert.Equal(99, monkeys[0].inspects);
@@ -104,9 +109,14 @@ Monkey 3:
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
             var monkeys = AoC2020.Day11.GetMonkeys(lines);
             Assert.Equal(4, monkeys.Count);
+            var commonDivisor = 1L;
+            foreach (var m in monkeys)
+            {
+                commonDivisor *= m.divider;
+            }
             foreach (var n in Enumerable.Range(0, 1000))
             {
-                AoC2020.Day11.Round(monkeys, false);
+                AoC2020.Day11.Round(monkeys, false, commonDivisor);
             }
 
             Assert.Equal(5204, monkeys[0].inspects);

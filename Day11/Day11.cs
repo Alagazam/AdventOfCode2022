@@ -44,7 +44,7 @@ namespace AoC2020
             return monkeys;
         }
 
-        public static void Round(List<Monkey> monkeys, bool worryDivide = true)
+        public static void Round(List<Monkey> monkeys, bool worryDivide = true, Int64 commonDivisor = 0)
         {
             foreach(var m in monkeys)
             {
@@ -63,6 +63,8 @@ namespace AoC2020
                     }
 
                     if (worryDivide) newItem /= 3;
+
+                    if (commonDivisor != 0) newItem = newItem % commonDivisor;
 
                     if (newItem % m.divider== 0)
                     {
@@ -93,9 +95,15 @@ namespace AoC2020
         public static Int64 Day11b(string[] input)
         {
             List<Monkey> monkeys = GetMonkeys(input);
+            var commonDivisor = 1L;
+            foreach (var m in monkeys)
+            {
+                commonDivisor *= m.divider;
+            }
+
             foreach (var n in Enumerable.Range(0, 10000))
             {
-                Round(monkeys, false);
+                Round(monkeys, false, commonDivisor);
             }
             monkeys.Sort((m1, m2) => m2.inspects.CompareTo(m1.inspects));
 
