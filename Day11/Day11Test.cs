@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace AoC2020
+namespace AoC
 {
     public class Day11Test
     {
@@ -55,9 +55,9 @@ Monkey 3:
         public void TestRound()
         {
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
-            var monkeys = AoC2020.Day11.GetMonkeys(lines);
+            var monkeys = AoC.Day11.GetMonkeys(lines);
             Assert.Equal(4, monkeys.Count);
-            AoC2020.Day11.Round(monkeys);
+            AoC.Day11.Round(monkeys);
 
             Assert.Equal(4, monkeys[0].items.Count);
             Assert.Equal(6, monkeys[1].items.Count);
@@ -71,9 +71,9 @@ Monkey 3:
         public void TestRoundB()
         {
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
-            var monkeys = AoC2020.Day11.GetMonkeys(lines);
+            var monkeys = AoC.Day11.GetMonkeys(lines);
             Assert.Equal(4, monkeys.Count);
-            AoC2020.Day11.Round(monkeys, false);
+            AoC.Day11.Round(monkeys, false);
 
             Assert.Equal(2, monkeys[0].inspects);
             Assert.Equal(4, monkeys[1].inspects);
@@ -85,7 +85,7 @@ Monkey 3:
         public void TestRoundB20()
         {
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
-            var monkeys = AoC2020.Day11.GetMonkeys(lines);
+            var monkeys = AoC.Day11.GetMonkeys(lines);
             Assert.Equal(4, monkeys.Count);
             var commonDivisor = 1L;
             foreach (var m in monkeys)
@@ -94,7 +94,7 @@ Monkey 3:
             }
             foreach (var n in Enumerable.Range(0, 20))
             {
-                AoC2020.Day11.Round(monkeys, false, commonDivisor);
+                AoC.Day11.Round(monkeys, false, commonDivisor);
             }
 
             Assert.Equal(99, monkeys[0].inspects);
@@ -107,7 +107,7 @@ Monkey 3:
         public void TestRoundB1k()
         {
             var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
-            var monkeys = AoC2020.Day11.GetMonkeys(lines);
+            var monkeys = AoC.Day11.GetMonkeys(lines);
             Assert.Equal(4, monkeys.Count);
             var commonDivisor = 1L;
             foreach (var m in monkeys)
@@ -116,7 +116,7 @@ Monkey 3:
             }
             foreach (var n in Enumerable.Range(0, 1000))
             {
-                AoC2020.Day11.Round(monkeys, false, commonDivisor);
+                AoC.Day11.Round(monkeys, false, commonDivisor);
             }
 
             Assert.Equal(5204, monkeys[0].inspects);

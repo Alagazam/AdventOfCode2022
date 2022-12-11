@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace AoC2020
+namespace AoC
 {
     public class Day01Test
     {

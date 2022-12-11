@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
 
-namespace AoC2020
+namespace AoC
 {
     public class Monkey
     {

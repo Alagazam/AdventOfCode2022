@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Resources;
 
-namespace AoC2020
+namespace AoC
 {
     public static class Day05
     {

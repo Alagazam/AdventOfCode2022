@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Diagnostics.Metrics;
 
-namespace AoC2020
+namespace AoC
 {
     public static class Day08
     {

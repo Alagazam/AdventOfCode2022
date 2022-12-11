@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace AoC2020
+namespace AoC
 {
     struct Coord { public int X; public int Y; };
 

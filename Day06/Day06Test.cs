@@ -4,7 +4,7 @@ using System.Diagnostics.Metrics;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace AoC2020
+namespace AoC
 {
     public class Day06Test
     {

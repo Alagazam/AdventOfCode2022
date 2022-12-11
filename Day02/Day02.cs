@@ -3,7 +3,7 @@ using System.Diagnostics;
 using static System.Formats.Asn1.AsnWriter;
 using System.Text;
 
-namespace AoC2020
+namespace AoC
 {
     public static class Day02
     {
