@@ -26,9 +26,8 @@ namespace AoC
             return new Coord(-1, -1);
         }
 
-        public static Int64 Day12a(string[] input)
+        public static Int64 FindPath(string[] input, Coord pos)
         {
-            var pos = FindStart(input);
             var steps = new int[input.Length, input[0].Length];
             var dirs = new Coord[] { new Coord(0, -1), new Coord(0, 1), new Coord(-1, 0), new Coord(1, 0) };
 
@@ -60,13 +59,29 @@ namespace AoC
                     }
                 }
             }
-
             return 0;
+        }
+        public static Int64 Day12a(string[] input)
+        {
+            var pos = FindStart(input);
+            return FindPath(input, pos);
         }
 
         public static Int64 Day12b(string[] input)
         {
-            return 0;
+            var min = Int64.MaxValue;
+            foreach(var row in Enumerable.Range(0, input.Length))
+            {
+                foreach(var col in Enumerable.Range(0, input[0].Length))
+                {
+                    if (input[row][col] == 'a' || input[row][col] == 'S')
+                    {
+                        var l = FindPath(input, new Coord(row,col));
+                        if (l != 0 && l < min) min = l;
+                    }
+                }
+            }
+            return min;
         }
 
 

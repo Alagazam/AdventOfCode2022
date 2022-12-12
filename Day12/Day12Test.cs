@@ -16,7 +16,7 @@ abdefghi
 ";
 
         readonly Int64 resultA = 31;
-        readonly Int64 resultB = 0;
+        readonly Int64 resultB = 29;
 
         [Fact]
         public void FindStart()
