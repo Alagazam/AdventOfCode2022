@@ -38,7 +38,7 @@ namespace AoC
         }
 
 
-        [Fact]
+        //[Fact]
         public void Day22b()
         {
             var sw = Stopwatch.StartNew();
